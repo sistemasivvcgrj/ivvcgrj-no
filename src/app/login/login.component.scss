@@ -1,0 +1,99 @@
+.spinner {
+    display: table;
+    margin: 0 auto;
+
+}
+.sistema-ivvcgrj {
+    &__content {
+        background-image:url("./../../assets/imgs/bg-login.png");
+        margin: 0 auto;
+        padding-top: 100px;
+        width: 100%;
+        height: 100%;
+    }
+    &__footer {
+        position: fixed;
+        left: 0;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+        img {
+            width: 100px;
+        }
+    }
+}
+.logo-sistema {
+    background-image:url("./../../assets/imgs/logo-verbo-png.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    margin: 0 auto;
+    width: 460px; /* You must set a specified height */
+    height: 126px; /* You must set a specified height */
+}
+
+mat-card {
+    background-color: transparent;
+    box-shadow: none;
+}
+@media (min-width: 640px) {
+    mat-card {
+        margin-left: auto;
+        margin-right: auto;
+        width: 55%;
+        margin: 24px auto;
+    }
+}
+
+@media (max-width: 640px) {
+    mat-card {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 90%;
+        margin: 24px auto;
+    }
+    // .sistema-ivvcgrj {
+    //     &__footer {
+    //         bottom: 100px;
+    //     }
+    // }
+    .logo-sistema {
+        height: 90px;
+        width: 350px;
+    }
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-card-actions {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    button {
+        padding: 0px;
+        width: 48%;
+    }
+}
+.mat-mdc-raised-button.mat-primary {
+    background-color: #701520;
+}
+.mat-mdc-outlined-button.mat-primary {
+    color: white;
+    border-color: white;
+}
+.action-button {
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 24px !important;
+}
+button {
+    width: 100%;
+    height: 45px;
+}
+textarea {
+    font-size: 16px;
+    transform-origin: top left;
+}
