@@ -1,0 +1,107 @@
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-is-mobile .example-toolbar {
+    position: fixed;
+    z-index: 2;
+  }
+  
+  .mat-icon-menu {
+    margin: 0px 16px 0px 0;
+  }
+  mat-sidenav {
+    width: 230px;
+    background-color: #ececec;
+  }
+  .mat-toolbar.mat-primary {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+  }
+ 
+  .img {
+    width: 130px;
+  }
+
+  .sidepanel  {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    height: 250px;
+    top: 64px;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    &__mat-icon-menu {
+        color:white
+    }
+  }
+  
+  .sidepanel a {
+    padding: 8px 8px 8px 24px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    
+  }
+  
+  .sidepanel a:hover {
+    color: #358d86;
+  }
+  
+  @media (max-width: 640px) {
+    .sidepanel {
+        top: 55px
+    }
+}
+  
+  .sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 36px;
+  }
+  .item-menu {
+    color: white;
+    font-size: 18px;
+    margin: 24px;
+    vertical-align: super;
+
+  }
+  .item-menu:hover {
+    color: #358d86;
+
+  }
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color:#444;
+  }
+  .div-items {
+    width: 300px;
+    transition: 0.5s;
+  }
+  
+  
+  
+  

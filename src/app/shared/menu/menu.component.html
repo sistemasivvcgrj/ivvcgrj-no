@@ -1,0 +1,45 @@
+<div class="example-container">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="openNav()"><mat-icon>menu</mat-icon></button>
+    <img class="img" src="assets/imgs/logo-sistema.png">
+    <div>
+      <button mat-icon-button [matMenuTriggerFor]="menuNotification" aria-label="Notificação">
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Conta">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    </div>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>manage_accounts</mat-icon>
+        <span>Minha Conta</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>settings</mat-icon>
+        <span>Opções</span>
+      </button>
+      <button (click)="onLogOut()" mat-menu-item>
+        <mat-icon>logout</mat-icon>
+        <span>Sair</span>
+      </button>
+    </mat-menu>
+    <mat-menu #menuNotification="matMenu">
+      <button mat-menu-item>
+        <mat-icon>notifications</mat-icon>
+        <span>Minha notificações</span>
+      </button>
+    </mat-menu>
+
+  </mat-toolbar>
+</div>
+
+<div #mySidepanel id="mySidepanel" class="sidepanel">
+  <div #divElements class="div-items" style="display: table;">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">×</a>
+  <a class="sidepanel__item-menu" (click)="closeNav()" mat-list-item routerLink="/home"><mat-icon class="sidepanel__mat-icon-menu">home</mat-icon><span class="item-menu">Home</span></a>
+  <a class="sidepanel__item-menu" (click)="closeNav()" mat-list-item routerLink="/cadastro"><mat-icon class="sidepanel__mat-icon-menu">account_circle</mat-icon><span class="item-menu">Acolhedores</span></a>
+  <a class="sidepanel__item-menu" (click)="closeNav()" mat-list-item routerLink="/manuais"><mat-icon class="sidepanel__mat-icon-menu">feed</mat-icon><span class="item-menu">Manuais</span></a>
+  </div>
+  
+</div>

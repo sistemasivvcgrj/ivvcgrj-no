@@ -1,0 +1,44 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar *ngIf="false" color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <img class="img" src="assets/imgs/logo-sistema.png">
+    <div>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Notificação">
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Conta">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    </div>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>manage_accounts</mat-icon>
+        <span>Minha Conta</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>settings</mat-icon>
+        <span>Opções</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>logout</mat-icon>
+        <span>Sair</span>
+      </button>
+    </mat-menu>
+
+  </mat-toolbar>
+  <mat-sidenav-container class="example-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list >
+        <a (click)="snav.close()" mat-list-item routerLink="/home"><mat-icon class="mat-icon-menu">home</mat-icon> Home</a>
+        <a (click)="snav.close()" mat-list-item routerLink="/cadastro"><mat-icon class="mat-icon-menu">account_circle</mat-icon>Acolhedores</a>
+        <a (click)="snav.close()" mat-list-item routerLink="/manuais"><mat-icon class="mat-icon-menu">feed</mat-icon>Manuais</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content" (click)="snav.close()">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+

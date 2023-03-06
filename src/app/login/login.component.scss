@@ -1,3 +1,5 @@
+@use './../../style/tokens.scss' as *;
+
 .spinner {
     display: table;
     margin: 0 auto;
@@ -18,18 +20,18 @@
         width: 100%;
         text-align: center;
         img {
-            width: 100px;
+            width: 120px;
         }
     }
 }
 .logo-sistema {
-    background-image:url("./../../assets/imgs/logo-verbo-png.png");
+    background-image:url("./../../assets/imgs/logo-nova-v1.png");
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover; /* Resize the background image to cover the entire container */
     margin: 0 auto;
     width: 460px; /* You must set a specified height */
-    height: 126px; /* You must set a specified height */
+    height: 120px; /* You must set a specified height */
 }
 
 mat-card {
@@ -59,8 +61,8 @@ mat-card {
     //     }
     // }
     .logo-sistema {
-        height: 90px;
-        width: 350px;
+        height: 80px;
+        width: 300px;
     }
 }
 
@@ -78,7 +80,7 @@ mat-card-actions {
     }
 }
 .mat-mdc-raised-button.mat-primary {
-    background-color: #701520;
+    background-color: $primary-color;
 }
 .mat-mdc-outlined-button.mat-primary {
     color: white;

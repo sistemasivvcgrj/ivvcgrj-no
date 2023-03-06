@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.scss'],
 })
-export class CadastroComponent {}
+export class CadastroComponent {
+  hide = false;
+}

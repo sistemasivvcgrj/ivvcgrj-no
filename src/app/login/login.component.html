@@ -8,15 +8,15 @@
     <mat-card-content>
       <mat-form-field>
         <mat-label>Login</mat-label>
-        <input formControlName="nome" matInput placeholder="Informe o usuário">
+        <input matInput placeholder="Informe o usuário">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Senha</mat-label>
-        <input formControlName="senha" matInput placeholder="Informe a senha" matInput [type]="hide ? 'password' : 'text'">
+        <input matInput placeholder="Informe a senha" matInput [type]="hide ? 'password' : 'text'">
       </mat-form-field>
       <mat-card-actions align="end">
         <button mat-stroked-button color="primary">Recuperar senha</button>
-        <button mat-raised-button color="primary">Entrar</button>
+        <button mat-raised-button color="primary" (click)="onClick()">Entrar</button>
       </mat-card-actions>
     </mat-card-content>
   </mat-card>
