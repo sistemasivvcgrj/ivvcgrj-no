@@ -15,7 +15,7 @@ export class LoginComponent {
   hide = true;
 
   onClick() {
-    this.router.navigate(['/cadastro']);
+    this.router.navigate(['/acompanhamento']);
   }
 
 }

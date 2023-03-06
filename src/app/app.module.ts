@@ -1,4 +1,4 @@
-import { MenuComponent } from './shared/menu/menu.component';
+import { AcompanhamentoModule } from './acompanhamento/acompanhamento.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LoginComponent } from './login/login.component';
 import { LOCALE_ID, NgModule } from '@angular/core';
@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterModule, Routes } from '@angular/router';
 import { appRoutes } from './app.routes';
-import { CadastroComponent } from './cadastro/cadastro.component';
+import { CadastroComponent } from './acompanhamento/cadastro/cadastro.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -35,30 +35,30 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgxCurrencyModule } from "ngx-currency";
 import { MenuModule } from './shared/menu/menu.module';
+import { AcompanhamentoComponent } from './acompanhamento/acompanhamento.component';
 
 registerLocaleData(ptBr);
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
+  { path: 'acompanhamento', component: AcompanhamentoComponent },
   {path: '', component: LoginComponent,},
 ];
 
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     NxWelcomeComponent, 
-    CadastroComponent,
     LoginComponent, 
-    NavigationComponent,
-    MenuComponent],
+    NavigationComponent
+   ],
   imports: [
     BrowserAnimationsModule,
     LayoutModule,
     BrowserModule,
     MatCardModule,
-    MatButtonModule,
     MatInputModule,
     MatToolbarModule,
     MatButtonModule,
@@ -69,8 +69,6 @@ const routes: Routes = [
     MatCardModule,
     HttpClientModule,
     MatProgressSpinnerModule,
-    MatInputModule,
-    ReactiveFormsModule,
     MatMenuModule,
     MatTableModule,
     MatPaginatorModule,
@@ -81,6 +79,8 @@ const routes: Routes = [
     NgxCurrencyModule,
     MatSelectModule,
     ReactiveFormsModule,
+    AcompanhamentoModule,
+    MenuModule,
     [RouterModule.forRoot(routes,
       {enableTracing: true}
       )],

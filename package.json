@@ -19,11 +19,11 @@
     "@angular/platform-browser": "~15.2.0",
     "@angular/platform-browser-dynamic": "~15.2.0",
     "@angular/router": "~15.2.0",
+    "ngx-currency": "^3.0.0",
     "rxjs": "~7.8.0",
     "sass": "^1.58.3",
     "tslib": "^2.3.0",
-    "zone.js": "~0.12.0",
-    "ngx-currency": "^2.5.3"
+    "zone.js": "~0.12.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~15.2.0",

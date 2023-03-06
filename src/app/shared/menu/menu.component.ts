@@ -21,14 +21,12 @@ export class MenuComponent {
     // document.getElementById("mySidepanel").style.width = "250px";
     this.mySidepanel.nativeElement.style.width = '250px'
     // this.divElements.nativeElement.style.display = 'block'
-    this.itemColor.nativeElement.style.color = 'white'
     
   }
   
   closeNav() {
     this.mySidepanel.nativeElement.style.width = '0'
     // this.divElements.nativeElement.style.display = 'none'
-    this.itemColor.nativeElement.style.color = '#111'
   }
 
   onLogOut() {

@@ -26,6 +26,7 @@
     display: flex;
     justify-content: space-between;
     position: fixed;
+    z-index: 9999999;
   }
  
   .img {
@@ -61,7 +62,7 @@
   .sidepanel a:hover {
     color: #358d86;
   }
-  
+
   @media (max-width: 640px) {
     .sidepanel {
         top: 55px
