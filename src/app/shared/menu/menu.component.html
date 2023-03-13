@@ -1,6 +1,6 @@
-<div class="example-container">
-  <mat-toolbar color="primary" class="example-toolbar">
-    <button mat-icon-button (click)="openNav()"><mat-icon>menu</mat-icon></button>
+<div class="menu-container">
+  <mat-toolbar color="primary" class="menu-toolbar">
+    <button *ngIf="onMenu"  mat-icon-button (click)="openNav()"><mat-icon>menu</mat-icon></button>
     <img class="img" src="assets/imgs/logo-sistema.png">
     <div>
       <button mat-icon-button [matMenuTriggerFor]="menuNotification" aria-label="Notificação">
@@ -27,18 +27,21 @@
     <mat-menu #menuNotification="matMenu">
       <button mat-menu-item>
         <mat-icon>notifications</mat-icon>
-        <span>Minha notificações</span>
+        <span>Minhas notificações</span>
       </button>
     </mat-menu>
 
   </mat-toolbar>
 </div>
 
-<div #mySidepanel id="mySidepanel" class="sidepanel">
+<div *ngIf="onMenu"  #mySidepanel id="mySidepanel" class="sidepanel">
   <div #divElements class="div-items" style="display: table;">
     <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">×</a>
   <a class="sidepanel__item-menu" (click)="closeNav()" mat-list-item routerLink="/home"><mat-icon class="sidepanel__mat-icon-menu">home</mat-icon><span class="item-menu">Home</span></a>
-  <a class="sidepanel__item-menu" (click)="closeNav()" mat-list-item href="/#/acompanhamento"><mat-icon class="sidepanel__mat-icon-menu">account_circle</mat-icon><span class="item-menu">Acolhedores</span></a>
+  <a class="sidepanel__item-menu" (click)="closeNav()" mat-list-item href="#/usuarios"><mat-icon class="sidepanel__mat-icon-menu">supervised_user_circle</mat-icon><span class="item-menu">Usuários</span></a>
+  <a class="sidepanel__item-menu" (click)="closeNav()" mat-list-item href="#/acolhedores"><mat-icon class="sidepanel__mat-icon-menu">account_circle</mat-icon><span class="item-menu">Acolhedores</span></a>
+  <a class="sidepanel__item-menu" (click)="closeNav()" mat-list-item routerLink="#/eventos"><mat-icon class="sidepanel__mat-icon-menu">verified</mat-icon><span class="item-menu">Eventos</span></a>
+  <a class="sidepanel__item-menu" (click)="closeNav()" mat-list-item routerLink="#/eventos"><mat-icon class="sidepanel__mat-icon-menu">event_available</mat-icon><span class="item-menu">Escalas</span></a>
   <a class="sidepanel__item-menu" (click)="closeNav()" mat-list-item routerLink="/manuais"><mat-icon class="sidepanel__mat-icon-menu">feed</mat-icon><span class="item-menu">Manuais</span></a>
   </div>
   

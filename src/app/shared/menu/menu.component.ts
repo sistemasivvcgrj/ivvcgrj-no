@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent {
 
-  onMenu = true
+  // onMenu = true
+  @Input() onMenu = true;
   @ViewChild('mySidepanel') mySidepanel: ElementRef<HTMLDivElement> = {} as ElementRef;;
   @ViewChild('divElements') divElements: ElementRef<HTMLDivElement> = {} as ElementRef;;
   @ViewChild('itemColor') itemColor: ElementRef<HTMLSpanElement> = {} as ElementRef;;

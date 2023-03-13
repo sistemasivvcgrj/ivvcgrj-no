@@ -1,0 +1,58 @@
+<sistema-ivvcgrj-menu></sistema-ivvcgrj-menu>
+<sistema-ivvcgrj-header [bullet]="false" [titulo]="'Cadastro'" [logo]="''"></sistema-ivvcgrj-header>
+<div class="sistema-ivvcgrj-cadastro">
+  <div class="sistema-ivvcgrj-cadastro__card-cadastro">
+    <mat-card>
+      <mat-card-header>
+          <!-- <mat-card-title>Incluir Visitante</mat-card-title> -->
+          <mat-card-subtitle></mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <form [formGroup]="formulario">
+            <br>
+            <mat-form-field>
+              <mat-label>Nome</mat-label>
+              <input formControlName="nome" matInput placeholder="Informe o nome">
+            </mat-form-field>
+              <mat-form-field>
+                  <mat-label>Telefone</mat-label>
+                  <input formControlName="telefone" matInput placeholder="Informe o telefone"/>
+              </mat-form-field>
+              <mat-form-field appearance="fill">
+                <mat-label>Data</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>DD/MM/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              <mat-form-field>
+                  <mat-label>Convidado por</mat-label>
+                  <input currencyMask formControlName="convidado" matInput placeholder="Informe o nome" />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Como Conheceu a Igreja</mat-label>
+                <mat-select formControlName="tipo">
+                  <mat-option value="0">Site do Ministério Verbo da Vida</mat-option>
+                  <mat-option value="1">Redes Sociais</mat-option>
+                  <mat-option value="2">Internet</mat-option>
+                  <mat-option value="3">Youtube</mat-option>
+                  <mat-option value="4">Passando em frente a igreja</mat-option>
+                  <mat-option value="5">Pelo Muro do estacionamento</mat-option>
+                  <mat-option value="6">Pela Festa das Nações</mat-option>
+                  <mat-option value="7">Centro de Cura</mat-option>
+                  <mat-option value="8">Evangelismo externo</mat-option>
+                  <mat-option value="9">Indicação (Amigo/Familiar)</mat-option>
+                  <mat-option value="10">Vizinhança</mat-option>
+                  <mat-option value="11">Hemorio</mat-option>
+                  <mat-option value="12">Bazar</mat-option>
+                  <mat-option value="13">Outros Verbos</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div class="action-button">
+                  <button (click)="incluir();" mat-raised-button color="primary">CADASTRAR</button>
+              </div>
+          </form>
+        </mat-card-content>
+    </mat-card>
+  </div>
+</div>

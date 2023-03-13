@@ -1,0 +1,41 @@
+<sistema-ivvcgrj-menu></sistema-ivvcgrj-menu>
+<!-- <sistema-ivvcgrj-calendario></sistema-ivvcgrj-calendario> -->
+<sistema-ivvcgrj-header [bullet]="true" [titulo]="'Usuários'" [logo]="'assets/imgs/no-img.png'"></sistema-ivvcgrj-header>
+<div class="sistema-ivvcgrj-usuarios">
+  <div class="sistema-ivvcgrj-usuarios__card-usuarios">
+    <mat-card>
+      <mat-icon>add</mat-icon>
+      <div mat-card-image  class="mdc-card__media__primary"></div>  
+        <mat-card-content>
+          <h2>Usuários</h2>
+          <p>Preencha os dados dos usuários</p>
+          <mat-card-actions align="end">
+            <button mat-raised-button color="primary" (click)="cadastrar()">Cadastrar</button>
+          </mat-card-actions>
+        </mat-card-content>
+    </mat-card>
+    <mat-card>
+    <mat-icon>search</mat-icon>
+    <div mat-card-image  class="mdc-card__media__secondary"></div>  
+    <mat-card-content>
+        <h2>Usuários</h2>
+        <p>Consulte os dados dos usuários</p>
+        <mat-card-actions align="end">
+          <button mat-raised-button color="secondary" (click)="consultar()">Consultar</button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+    <mat-icon>pie_chart</mat-icon>
+    <div mat-card-image class="mdc-card__media__accent"></div>  
+    <mat-card-content>
+        <h2>Usuários</h2>
+        <p>Gráficos com os dados dos usuários</p>
+        <mat-card-actions align="end">
+          <button mat-raised-button color="accent" (click)="cadastrar()">Relatórios</button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+    </div>
+</div>
+

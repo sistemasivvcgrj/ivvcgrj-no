@@ -1,0 +1,109 @@
+<sistema-ivvcgrj-menu></sistema-ivvcgrj-menu>
+<sistema-ivvcgrj-header [bullet]="false" [titulo]="'Consultar usuários'" [logo]="''"></sistema-ivvcgrj-header>
+<div class="sistema-ivvcgrj-usuarios-consulta">
+  <div class="sistema-ivvcgrj-usuarios-consulta__card-usuarios-consulta">
+    <div mat-dialog-actions align="end" class="container-button">
+
+      <button (click)="redirectAdd()"  routerLink="/add-products" color="primary" mat-mini-fab aria-label="Incuir produto">
+        <mat-icon>add</mat-icon>
+      </button>
+
+      <button [disabled]="selection.selected.length !==1" color="primary" mat-mini-fab aria-label="Editar produto">
+      <!-- <button [disabled]="selection.selected.length == 0" (click)="openDialog()" color="primary" mat-mini-fab aria-label="Incluir produto"> -->
+
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button [disabled]="selection.selected.length !== 1" color="warn" mat-mini-fab aria-label="Excluir produto">
+        <!-- <button [disabled]="selection.selected.length == 0" (click)="openDialog()" color="primary" mat-mini-fab aria-label="Incluir produto"> -->
+
+          <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <mat-form-field>
+      <mat-label>Pesquisar</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Nome ou Departamento" #input>
+    </mat-form-field>
+
+    <div class="mat-elevation-z8 mat-container">
+      <table #tableScroll id="tableScroll" mat-table [dataSource]="dataSource" matSort >
+
+        <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+      <th class="th-sel" mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event ? masterToggle() : null"
+                      [checked]="selection.hasValue() && isAllSelected()"
+                      [indeterminate]="selection.hasValue() && !isAllSelected()"
+                      [aria-label]="checkboxLabel()"
+                      >
+
+        </mat-checkbox>
+      </th>
+      <td class="th-sel" mat-cell *matCellDef="let row">
+        <mat-checkbox (click)="$event.stopPropagation()"
+                      (change)="$event ? selection.toggle(row) : null"
+                      [checked]="selection.isSelected(row)"
+                      [aria-label]="checkboxLabel(row)"
+                      >
+        </mat-checkbox>
+      </td>
+    </ng-container>
+
+        <!-- Column -->
+        <ng-container matColumnDef="nome" sticky>
+          <th class="th-name" mat-header-cell *matHeaderCellDef mat-sort-header> Nome <mat-icon (click)="clickScroll()">swap_horiz</mat-icon>
+          </th>
+          <td class="th-name" mat-cell *matCellDef="let row"> {{row.nome}} </td>
+        </ng-container>
+
+        <!-- Column -->
+        <ng-container matColumnDef="telefone">
+          <th class="th-telefone" mat-header-cell *matHeaderCellDef mat-sort-header> Telefone </th>
+          <td mat-cell *matCellDef="let row"> {{row.telefone}} </td>
+        </ng-container>
+
+         <!-- Column -->
+         <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+          <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+        </ng-container>
+
+        <!-- Color Column -->
+        <ng-container matColumnDef="dpto">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Departamento </th>
+          <td mat-cell *matCellDef="let row" [style.color]="row.dpto"> {{row.dpto}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="funcao">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Função </th>
+          <td mat-cell *matCellDef="let row" [style.color]="row.funcao"> {{row.funcao}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="gd">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Discipulado </th>
+          <td mat-cell *matCellDef="let row" [style.color]="row.gd"> {{row.gd}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="rhema">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Rhema </th>
+          <td mat-cell *matCellDef="let row" [style.color]="row.rhema"> {{row.rhema}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="aprovado">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Aprovado </th>
+          <td mat-cell *matCellDef="let row" [style.color]="row.aprovado"> {{row.aprovado}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="data">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Data </th>
+          <td mat-cell *matCellDef="let row" [style.color]="row.data"> {{row.data}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"  (click)="selection.toggle(row)"></tr>
+
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+    </div>
+  </div>

@@ -1,9 +1,15 @@
+import { NovoUsuarioComponent } from './novo-cadastro/novo-usuario.component';
+import { CalendarioModule } from './../shared/calendario/calendario.module';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { HeaderModule } from '../shared/header/header.module';
+import { ConsultaUsuariosComponent } from './consulta/consulta.component';
+import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
-import { MenuComponent } from './../shared/menu/menu.component';
-import { AcompanhamentoComponent } from './acompanhamento.component';
+import { UsuariosComponent } from './usuarios.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CadastroComponent } from './cadastro/cadastro.component';
+import { CadastroUsuariosComponent } from './cadastro/cadastro.component';
 import { MatCardModule } from '@angular/material/card';
 import { MenuModule } from '../shared/menu/menu.module';
 import { MatButtonModule } from '@angular/material/button';
@@ -14,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatTableModule } from '@angular/material/table'
+
 
 
 @NgModule({
@@ -24,21 +32,29 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     CommonModule,
     MatCardModule,
     MenuModule,
+    HeaderModule,
     MatButtonModule,
     MatInputModule,
     MatOptionModule,
     MatSelectModule,
+    MatCheckboxModule,
+    MatTableModule,
+    MatPaginatorModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatIconModule,
     ReactiveFormsModule,
+    CalendarioModule
 ],
   exports: [
-    AcompanhamentoComponent,
-    CadastroComponent
+    UsuariosComponent,
+    CadastroUsuariosComponent,
+    ConsultaUsuariosComponent,
+    NovoUsuarioComponent
   ],
-  declarations: [AcompanhamentoComponent, CadastroComponent],
+  declarations: [UsuariosComponent, CadastroUsuariosComponent, ConsultaUsuariosComponent, NovoUsuarioComponent],
   providers: [
     MatDatepickerModule
   ]
 })
-export class AcompanhamentoModule { }
+export class UsuariosModule { }

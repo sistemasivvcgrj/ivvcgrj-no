@@ -1,0 +1,43 @@
+<sistema-ivvcgrj-menu></sistema-ivvcgrj-menu>
+<sistema-ivvcgrj-header [bullet]="true" [titulo]="'Acolhedores'" [logo]="'assets/imgs/no-img.png'"></sistema-ivvcgrj-header>
+<div class="sistema-ivvcgrj-acompanhamento">
+  <div class="sistema-ivvcgrj-acompanhamento__card-acolhedores">
+    <mat-card>
+      <mat-icon>add</mat-icon>
+      <div mat-card-image  class="mdc-card__media__primary"></div>  
+        <mat-card-content>
+          <h2>Visitantes</h2>
+          <p>Preencha as informações para cada 
+            Programação</p>
+          <mat-card-actions align="end">
+            <button mat-raised-button color="primary" (click)="cadastrar()">Cadastrar</button>
+          </mat-card-actions>
+        </mat-card-content>
+    </mat-card>
+    <mat-card>
+    <mat-icon>search</mat-icon>
+    <div mat-card-image  class="mdc-card__media__secondary"></div>  
+    <mat-card-content>
+        <h2>Visitantes</h2>
+        <p>Preencha as informações para cada 
+          Programação</p>
+        <mat-card-actions align="end">
+          <button mat-raised-button color="secondary" (click)="consultar()">Consultar</button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+    <mat-icon>pie_chart</mat-icon>
+    <div mat-card-image class="mdc-card__media__accent"></div>  
+    <mat-card-content>
+        <h2>Visitantes</h2>
+        <p>Preencha as informações para cada 
+          Programação</p>
+        <mat-card-actions align="end">
+          <button mat-raised-button color="accent" (click)="cadastrar()">Relatórios</button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+    </div>
+</div>
+

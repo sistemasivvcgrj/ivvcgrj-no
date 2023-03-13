@@ -3,10 +3,10 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'sistema-ivvcgrj-acompanhamento',
-  templateUrl: './acompanhamento.component.html',
-  styleUrls: ['./acompanhamento.component.scss']
+  templateUrl: './acolhedores.component.html',
+  styleUrls: ['./acolhedores.component.scss']
 })
-export class AcompanhamentoComponent {
+export class AcolhedoresComponent {
   hide = false;
   constructor(
     private router: Router
@@ -15,6 +15,11 @@ export class AcompanhamentoComponent {
 
   cadastrar() {
     this.router.navigate(['/cadastro']);
+
+  }
+
+  consultar() {
+    this.router.navigate(['/consulta']);
 
   }
 }

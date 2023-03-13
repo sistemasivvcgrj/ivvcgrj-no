@@ -1,0 +1,43 @@
+.sistema-ivvcgrj-cadastro {
+    &__card-cadastro {
+        text-align: center;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .spinner {
+        display: table;
+        margin: 0 auto;
+
+    }
+
+    @media (min-width: 640px) {
+        mat-card {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: 640px) {
+        mat-card {
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+
+    mat-form-field {
+        width: 100%;
+    }
+    .action-button {
+        width: 100%;
+        margin-top: 24px;
+        margin-bottom: 24px !important;
+    }
+    
+    textarea {
+        font-size: 16px;
+        transform-origin: top left;
+    }
+}

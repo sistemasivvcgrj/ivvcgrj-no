@@ -1,0 +1,47 @@
+@use './../../../style/tokens.scss' as *;
+
+.header-dpto {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.titulo-dpto {
+    vertical-align: super;
+    h1 {
+        margin-left: 8px;
+        text-align: center;
+    }
+}
+
+.bullet-dpto {
+    width: 60px;
+    height: 60px;
+    background-color: rgb(0 0 0 / 0%);
+    box-shadow: 1px 1px 6px rgb(0 0 0 / 28%);
+    border-radius: 100px;
+    position: relative;
+    margin: 0 auto;
+    display: inline-flex;
+    vertical-align: text-bottom;
+}
+.titulo-dpto {
+    display: inline-flex;
+}
+
+h2 {
+    margin-top: 8px;
+}
+h1 {
+    margin:64px 0px 32px auto;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.img-dpto {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius: 100px;
+}

@@ -44,3 +44,10 @@ body, input, label, p, a, span, h2, h1 {
   font-size: 12px;
   font-family: $font-verbo-site !important; 
 }
+h1 {
+  font:400 30px $font-verbo-site, sans-serif !important;
+}
+.mdc-button {
+  width: 100%;
+  height: 45px !important;
+}

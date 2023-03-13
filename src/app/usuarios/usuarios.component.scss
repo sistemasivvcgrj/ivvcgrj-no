@@ -1,0 +1,64 @@
+@use './../../style/tokens.scss' as *;
+
+.sistema-ivvcgrj-usuarios {
+    &__card-usuarios {
+        width: 320px;
+        margin: 40px auto;
+        padding-bottom: 8px;
+    }
+
+    @media (min-width: 640px) {
+        &__card-usuarios {
+            display: inline;
+        }
+        mat-card {
+            width: 300px;
+            display: inline-flex;
+            margin-left: 24px;
+        }
+    
+    }
+
+    button {
+        width: 100%;
+    }
+    mat-icon {
+        position: absolute;
+        z-index: 1;
+        top: 50px;
+        left: 35%;
+        font-size: 100px;
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+        text-align: center;
+        color: #ffffff99;
+    }
+    mat-card {
+        margin-bottom: 28px ;
+    }
+    .mat-mdc-raised-button.mat-primary {
+        background-color: $primary-color;
+    }
+    .mat-mdc-raised-button.mat-secondary {
+        background-color: $green-color;
+        color: white;
+    }
+    .mat-mdc-raised-button.mat-accent {
+        background-color: $black-color;
+        color: white;
+    }
+    .mdc-card__media {
+        height: 200px;
+        &__primary {
+            background-color: $primary-color;
+        }
+        &__secondary {
+            background-color: $green-color;
+        }
+        &__accent {
+            background-color: $black-color;
+        }
+
+    }
+}

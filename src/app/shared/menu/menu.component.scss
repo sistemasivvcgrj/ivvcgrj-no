@@ -1,5 +1,5 @@
 
-.example-container {
+.menu-container {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -9,7 +9,7 @@
     right: 0;
   }
   
-  .example-is-mobile .example-toolbar {
+  .menu-is-mobile .menu-toolbar {
     position: fixed;
     z-index: 2;
   }
@@ -36,8 +36,8 @@
   .sidepanel  {
     width: 0;
     position: fixed;
-    z-index: 1;
-    height: 250px;
+    z-index: 2;
+    height: 350px;
     top: 64px;
     left: 0;
     background-color: #111;

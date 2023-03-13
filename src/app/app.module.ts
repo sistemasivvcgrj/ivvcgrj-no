@@ -1,4 +1,9 @@
-import { AcompanhamentoModule } from './acompanhamento/acompanhamento.module';
+import { CalendarioModule } from './shared/calendario/calendario.module';
+import { CalendarioComponent } from './shared/calendario/calendario.component';
+import { UsuariosModule } from './usuarios/usuarios.module';
+import { HeaderComponent } from './shared/header/header.component';
+import { ConsultaComponent } from './acolhedores/consulta/consulta.component';
+import { AcolhedoresModule } from './acolhedores/acolhedores.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LoginComponent } from './login/login.component';
 import { LOCALE_ID, NgModule } from '@angular/core';
@@ -8,7 +13,9 @@ import { AppComponent } from './app.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterModule, Routes } from '@angular/router';
 import { appRoutes } from './app.routes';
-import { CadastroComponent } from './acompanhamento/cadastro/cadastro.component';
+import { CadastroComponent } from './acolhedores/cadastro/cadastro.component';
+import { CadastroUsuariosComponent } from './usuarios/cadastro/cadastro.component';
+import { ConsultaUsuariosComponent } from './usuarios/consulta/consulta.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -35,14 +42,23 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgxCurrencyModule } from "ngx-currency";
 import { MenuModule } from './shared/menu/menu.module';
-import { AcompanhamentoComponent } from './acompanhamento/acompanhamento.component';
+import { HeaderModule } from './shared/header/header.module';
+import { AcolhedoresComponent } from './acolhedores/acolhedores.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { NovoUsuarioComponent } from './usuarios/novo-cadastro/novo-usuario.component';
 
 registerLocaleData(ptBr);
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cadastro', component: CadastroComponent },
-  { path: 'acompanhamento', component: AcompanhamentoComponent },
+  { path: 'consulta', component: ConsultaComponent },
+  { path: 'acolhedores', component: AcolhedoresComponent },
+  { path: 'usuarios', component: UsuariosComponent },
+  { path: 'cadastro-usuarios', component: CadastroUsuariosComponent },
+  { path: 'consulta-usuarios', component: ConsultaUsuariosComponent },
+  { path: 'novo-usuario', component: NovoUsuarioComponent },
+  { path: 'calendario', component: CalendarioComponent },
   {path: '', component: LoginComponent,},
 ];
 
@@ -79,8 +95,11 @@ const routes: Routes = [
     NgxCurrencyModule,
     MatSelectModule,
     ReactiveFormsModule,
-    AcompanhamentoModule,
+    AcolhedoresModule,
+    UsuariosModule,
     MenuModule,
+    HeaderModule,
+    CalendarioModule,
     [RouterModule.forRoot(routes,
       {enableTracing: true}
       )],

@@ -1,0 +1,124 @@
+<sistema-ivvcgrj-menu [onMenu]="false"></sistema-ivvcgrj-menu>
+<sistema-ivvcgrj-header
+  [bullet]="false"
+  [titulo]="'Cadastro de usuário'"
+></sistema-ivvcgrj-header>
+<div class="sistema-ivvcgrj-novo-usuario">
+  <div class="sistema-ivvcgrj-novo-usuario__card-novo-usuario">
+    <mat-card>
+      <mat-card-header>
+        <!-- <mat-card-title>Incluir Visitante</mat-card-title> -->
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="formulario">
+          <br />
+          <mat-form-field>
+            <mat-label>Nome</mat-label>
+            <input
+              formControlName="nome"
+              matInput
+              placeholder="Informe o nome"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>CPF</mat-label>
+            <input
+              formControlName="cpf"
+              matInput
+              placeholder="Informe o cpf"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input
+              formControlName="email"
+              matInput
+              placeholder="Informe o email"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Telefone</mat-label>
+            <input
+              formControlName="telefone"
+              matInput
+              placeholder="Informe o telefone"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Departamento</mat-label>
+            <mat-select>
+              <mat-option [value]="0">ABERTURA DA IGREJA / AUDITÓRIO </mat-option>
+              <mat-option [value]="1">ACOLHEDORES </mat-option>
+              <mat-option [value]="1">BALCÃO DE INFORMAÇÕES </mat-option>
+              <mat-option [value]="1">CANTINA </mat-option>
+              <mat-option [value]="1">DECORAÇÃO</mat-option>
+              <mat-option [value]="1">DIACONIA</mat-option>
+              <mat-option [value]="1">ESTACIONAMENTO</mat-option>
+              <mat-option [value]="1">FOTOGRAFIA</mat-option>
+              <mat-option [value]="1">INSTAGRAM</mat-option>
+              <mat-option [value]="1">INTERCESSORES</mat-option>
+              <mat-option [value]="1">LIVRARIA</mat-option>
+              <mat-option [value]="1">MINISTÉRIO DE MÚSICA</mat-option>
+              <mat-option [value]="1">OPERADOR DE CÂMERA</mat-option>
+              <mat-option [value]="1">OPERADOR DE ILUMINAÇÃO CÊNICA</mat-option>
+              <mat-option [value]="1">OPERADOR DE MESA / TRANSMISSÃO</mat-option>
+              <mat-option [value]="1">OPERADOR DE PROJEÇÃO (Telas de Led)</mat-option>
+              <mat-option [value]="1">OPERADOR DE LIVE - Transmissão</mat-option>
+              <mat-option [value]="1">OPERADOR DE SOM</mat-option>
+              <mat-option [value]="1">RECEPÇÃO DE MINISTROS</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Função no departamento</mat-label>
+            <mat-select>
+              <mat-option [value]="0"> Líder </mat-option>
+              <mat-option [value]="1"> Voluntário </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Discipulado</mat-label>
+            <input
+              currencyMask
+              formControlName="discipulado"
+              matInput
+              placeholder="Informe o discipulado"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Fez Rhema?</mat-label>
+            <mat-select>
+              <mat-option [value]="'sim'"> Sim </mat-option>
+              <mat-option [value]="'não'"> Não </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Senha</mat-label>
+            <input
+              type="password"
+              currencyMask
+              formControlName="senha"
+              matInput
+              placeholder="Informe a senha"
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Repita a Senha</mat-label>
+            <input
+              type="password"
+              currencyMask
+              formControlName="senha"
+              matInput
+              placeholder="Informe a senha"
+            />
+          </mat-form-field>
+          <div class="action-button">
+            <button (click)="incluir()" mat-raised-button color="primary">
+              CADASTRAR
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
