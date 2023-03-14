@@ -1,3 +1,7 @@
+import { RhemaService } from './services/rhema/rhema.service';
+import { DiscipuladosService } from './services/discipulados/discipulados.service';
+import { DepartamentosService } from './services/departamentos/departamentos.service';
+import { UsuariosService } from './services/usuarios/usuarios.service';
 import { CalendarioModule } from './shared/calendario/calendario.module';
 import { CalendarioComponent } from './shared/calendario/calendario.component';
 import { UsuariosModule } from './usuarios/usuarios.module';
@@ -46,6 +50,8 @@ import { HeaderModule } from './shared/header/header.module';
 import { AcolhedoresComponent } from './acolhedores/acolhedores.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { NovoUsuarioComponent } from './usuarios/novo-cadastro/novo-usuario.component';
+import { CpfPipe } from './pipe/cpf.pipe';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 registerLocaleData(ptBr);
 
@@ -59,7 +65,7 @@ const routes: Routes = [
   { path: 'consulta-usuarios', component: ConsultaUsuariosComponent },
   { path: 'novo-usuario', component: NovoUsuarioComponent },
   { path: 'calendario', component: CalendarioComponent },
-  {path: '', component: LoginComponent,},
+  {path: '', component: LoginComponent}
 ];
 
 
@@ -68,7 +74,8 @@ const routes: Routes = [
     AppComponent,
     NxWelcomeComponent, 
     LoginComponent, 
-    NavigationComponent
+    NavigationComponent,
+    CpfPipe
    ],
   imports: [
     BrowserAnimationsModule,
@@ -100,14 +107,22 @@ const routes: Routes = [
     MenuModule,
     HeaderModule,
     CalendarioModule,
+    NgxMaskDirective, 
+    NgxMaskPipe,
     [RouterModule.forRoot(routes,
       {enableTracing: true}
       )],
   ],
   exports: [RouterModule],
   providers: [
+    UsuariosService,
+    DepartamentosService,
+    DiscipuladosService,
+    RhemaService,
+    provideNgxMask(),
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     { provide: LOCALE_ID, useValue: 'pt' },
+
   ],
   bootstrap: [AppComponent],
 })

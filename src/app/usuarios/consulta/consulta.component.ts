@@ -1,3 +1,4 @@
+import { UsuariosService } from './../../services/usuarios/usuarios.service';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -21,7 +22,7 @@ export interface UserData {
 export class ConsultaUsuariosComponent {
   @ViewChild('tableScroll') matElements: ElementRef<HTMLTableElement> = {} as ElementRef;;
 
-  displayedColumns: string[] = ['select','nome','telefone','email', 'dpto','funcao','gd','rhema','aprovado','data'];
+  displayedColumns: string[] = ['select','nome','telefone','email', 'departamento','funcao_departamento','discipulado','rhema','aprovado','data'];
   dataSource: MatTableDataSource<UserData>;
   animal = '';
   name =  '';
@@ -52,7 +53,9 @@ export class ConsultaUsuariosComponent {
   ];
   constructor(
     public dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private _usuariosService: UsuariosService,
+
 
 
 
@@ -68,12 +71,26 @@ export class ConsultaUsuariosComponent {
       // this.applyFilter(e);
     }
   }
-  getUsuarios(): void {
+  //Mock
+  // getUsuarios(): void {
 
-        this.svc = this.types ? this.types : [];
+  //       this.svc = this.types ? this.types : [];
+  //       this.dataSource = new MatTableDataSource(this.svc ? this.svc : [] );
+  //       this.dataSource.paginator = this.paginator;
+  //       this.dataSource.sort = this.sort;
+
+  // }
+
+  getUsuarios(): void {
+    this
+      ._usuariosService
+      .consultaUsuarios()
+      .subscribe(svc => {
+        this.svc = svc ? svc : [];
         this.dataSource = new MatTableDataSource(this.svc ? this.svc : [] );
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
+      });
 
   }
 

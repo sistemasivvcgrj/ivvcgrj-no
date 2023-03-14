@@ -21,6 +21,8 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatTableModule } from '@angular/material/table'
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { UsuariosService } from '../services/usuarios/usuarios.service';
 
 
 
@@ -44,7 +46,9 @@ import { MatTableModule } from '@angular/material/table'
     MatNativeDateModule,
     MatIconModule,
     ReactiveFormsModule,
-    CalendarioModule
+    CalendarioModule,
+    NgxMaskDirective, 
+    NgxMaskPipe,
 ],
   exports: [
     UsuariosComponent,
@@ -54,6 +58,8 @@ import { MatTableModule } from '@angular/material/table'
   ],
   declarations: [UsuariosComponent, CadastroUsuariosComponent, ConsultaUsuariosComponent, NovoUsuarioComponent],
   providers: [
+    UsuariosService,
+    provideNgxMask(),
     MatDatepickerModule
   ]
 })

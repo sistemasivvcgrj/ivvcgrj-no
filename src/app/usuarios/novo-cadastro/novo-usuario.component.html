@@ -24,6 +24,7 @@
           <mat-form-field>
             <mat-label>CPF</mat-label>
             <input
+              mask="000.000.000-00"
               formControlName="cpf"
               matInput
               placeholder="Informe o cpf"
@@ -32,14 +33,17 @@
           <mat-form-field>
             <mat-label>Email</mat-label>
             <input
+              type="email"
               formControlName="email"
               matInput
               placeholder="Informe o email"
+              ngModel email
             />
           </mat-form-field>
           <mat-form-field>
-            <mat-label>Telefone</mat-label>
+            <mat-label>Celular</mat-label>
             <input
+              mask="(00) 00000-0000"
               formControlName="telefone"
               matInput
               placeholder="Informe o telefone"
@@ -48,25 +52,7 @@
           <mat-form-field>
             <mat-label>Departamento</mat-label>
             <mat-select>
-              <mat-option [value]="0">ABERTURA DA IGREJA / AUDITÓRIO </mat-option>
-              <mat-option [value]="1">ACOLHEDORES </mat-option>
-              <mat-option [value]="1">BALCÃO DE INFORMAÇÕES </mat-option>
-              <mat-option [value]="1">CANTINA </mat-option>
-              <mat-option [value]="1">DECORAÇÃO</mat-option>
-              <mat-option [value]="1">DIACONIA</mat-option>
-              <mat-option [value]="1">ESTACIONAMENTO</mat-option>
-              <mat-option [value]="1">FOTOGRAFIA</mat-option>
-              <mat-option [value]="1">INSTAGRAM</mat-option>
-              <mat-option [value]="1">INTERCESSORES</mat-option>
-              <mat-option [value]="1">LIVRARIA</mat-option>
-              <mat-option [value]="1">MINISTÉRIO DE MÚSICA</mat-option>
-              <mat-option [value]="1">OPERADOR DE CÂMERA</mat-option>
-              <mat-option [value]="1">OPERADOR DE ILUMINAÇÃO CÊNICA</mat-option>
-              <mat-option [value]="1">OPERADOR DE MESA / TRANSMISSÃO</mat-option>
-              <mat-option [value]="1">OPERADOR DE PROJEÇÃO (Telas de Led)</mat-option>
-              <mat-option [value]="1">OPERADOR DE LIVE - Transmissão</mat-option>
-              <mat-option [value]="1">OPERADOR DE SOM</mat-option>
-              <mat-option [value]="1">RECEPÇÃO DE MINISTROS</mat-option>
+              <mat-option *ngFor="let departamentos of svc; index as i;" [value]="departamentos._id">{{departamentos.nome}} </mat-option>
             </mat-select>
           </mat-form-field>
           <mat-form-field>
@@ -88,8 +74,9 @@
           <mat-form-field>
             <mat-label>Fez Rhema?</mat-label>
             <mat-select>
-              <mat-option [value]="'sim'"> Sim </mat-option>
-              <mat-option [value]="'não'"> Não </mat-option>
+              <mat-option [value]="1"> Sim </mat-option>
+              <mat-option [value]="2"> Não </mat-option>
+              <mat-option [value]="3"> Em curso </mat-option>
             </mat-select>
           </mat-form-field>
           <mat-form-field>
